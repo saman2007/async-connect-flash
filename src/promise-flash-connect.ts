@@ -5,6 +5,11 @@ import {
 } from "./promise-flash-functions";
 import { Config } from "./interfaces/interfaces";
 
+/**
+ * use this function to initialize promise base of async-connect-flash after setting the session middleware
+ * @param config this is the configuration of flashconnect
+ * @returns a middleware
+ */
 const flashConnectPromise = (config: Config = {}) => {
   return (req: Request, res: Response, next: NextFunction) => {
     const flashStore = config.storeProperty || "flash";

@@ -18,6 +18,11 @@ declare module "express-serve-static-core" {
   }
 }
 
+/**
+ * use this function to initialize callback version of async-flash-connect after setting the session middleware
+ * @param config the configuration object of flashconnect
+ * @returns a middleware
+ */
 const flashConnectCallback = (config: Config = {}) => {
   return (req: Request, res: Response, next: NextFunction) => {
     const flashStore = config.storeProperty || "flash";

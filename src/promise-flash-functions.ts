@@ -8,6 +8,7 @@ import { FlashData } from "./types/types";
  * * when this function runs, it will return a promise and *delete* your flash message in the session
  * @param req req param is the Request object that you use inside an express middleware
  * @param key key param is actually the title of your flash message
+ * @returns a promise
  */
 const getFlashMessagePr = (req: Request, key: string, config: Config) => {
   const storeProperty = config.storeProperty || "flash";
@@ -33,6 +34,7 @@ const getFlashMessagePr = (req: Request, key: string, config: Config) => {
  * @param req req param is the Request object that you use inside an express middleware
  * @param key key param is actually the title of your flash message
  * @param value value param is the datas that you want to store as a flash message. this should be a string or an array of strings
+ * @returns a promise
  */
 const setFlashMessagePr = (
   req: Request,
