@@ -1,0 +1,30 @@
+{
+  "name": "async-flash-connect",
+  "version": "1.0.0",
+  "description": "a newer and better module with async options for express js",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saman2007/async-flash-connect.git"
+  },
+  "keywords": [
+    "async",
+    "flash-connect",
+    "flash-message"
+  ],
+  "author": "Saman Ahrari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saman2007/async-flash-connect/issues"
+  },
+  "homepage": "https://github.com/saman2007/async-flash-connect#readme",
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "@types/express": "^4.17.14",
+    "@types/express-session": "^1.17.5",
+    "typescript": "^4.8.4"
+  }
+}
