@@ -12,4 +12,25 @@ interface Config {
   storeProperty?: string;
 }
 
-export { SetFlashCallbackFunction, GetFlashCallbackFunction, Config };
+interface SetFlash {
+  setFlash(
+    key: string,
+    value: FlashData,
+    callback?: SetFlashCallbackFunction
+  ): void | Promise<unknown>;
+}
+
+interface GetFlash {
+  getFlash(
+    key: string,
+    callback?: GetFlashCallbackFunction
+  ): void | Promise<unknown>;
+}
+
+export {
+  SetFlashCallbackFunction,
+  GetFlashCallbackFunction,
+  Config,
+  SetFlash,
+  GetFlash,
+};

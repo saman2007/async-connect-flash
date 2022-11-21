@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import {
   getFlashMessagePr,
   setFlashMessagePr,
-} from "./promise-flash-functions";
+} from "./promise-connect-flash-functions";
 import { Config } from "./interfaces/interfaces";
 
 /**
@@ -18,13 +18,15 @@ const flashConnectPromise = (config: Config = {}) => {
     if (!req.session)
       throw new Error("your should install express-session library!");
 
-    req.setFlash = (key, value) => {
-      return setFlashMessagePr(req, key, value, config);
-    };
+    if (!req.setFlash || !req.getFlash) {
+      req.setFlash = (key, value) => {
+        return setFlashMessagePr(req, key, value, config);
+      };
 
-    req.getFlash = (key) => {
-      return getFlashMessagePr(req, key, config);
-    };
+      req.getFlash = (key) => {
+        return getFlashMessagePr(req, key, config);
+      };
+    }
 
     next();
   };
