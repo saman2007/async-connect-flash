@@ -1,6 +1,6 @@
 {
   "name": "async-connect-flash",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "a newer and better module with async options for express js",
   "main": "lib/index.js",
   "scripts": {
