@@ -10,7 +10,7 @@ import { Config } from "./interfaces/interfaces";
  * @param config this is the configuration of flashconnect
  * @returns a middleware
  */
-const flashConnectPromise = (config: Config = {}) => {
+const connectFlashPromise = (config: Config = {}) => {
   return (req: Request, res: Response, next: NextFunction) => {
     const flashStore = config.storeProperty || "flash";
     if (!req.session[flashStore]) req.session[flashStore] = {};
@@ -32,4 +32,4 @@ const flashConnectPromise = (config: Config = {}) => {
   };
 };
 
-export default flashConnectPromise;
+export default connectFlashPromise;

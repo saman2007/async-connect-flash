@@ -14,7 +14,7 @@ declare module "express-serve-static-core" {
  * @param config the configuration object of flashconnect
  * @returns a middleware
  */
-const flashConnectCallback = (config: Config = {}) => {
+const connectFlashCallback = (config: Config = {}) => {
   return (req: Request, res: Response, next: NextFunction) => {
     const flashStore = config.storeProperty || "flash";
 
@@ -37,4 +37,4 @@ const flashConnectCallback = (config: Config = {}) => {
   };
 };
 
-export default flashConnectCallback;
+export default connectFlashCallback;
