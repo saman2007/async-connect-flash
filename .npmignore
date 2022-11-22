@@ -1,5 +1,3 @@
-/tsconfig.json
+tsconfig.json
 
-/.gitignore
-
-/src
+src/**/*

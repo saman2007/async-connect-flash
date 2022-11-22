@@ -22,6 +22,9 @@ const getFlashMessageCb = (
   config: Config
 ) => {
   const storeProperty = config.storeProperty || "flash";
+
+  if (!req.session[storeProperty]) req.session[storeProperty] = {};
+
   if (req.session[storeProperty][key]) {
     const msg: FlashData = req.session[storeProperty][key];
     delete req.session[storeProperty][key];
@@ -50,6 +53,9 @@ const setFlashMessageCb = (
   config: Config
 ) => {
   const storeProperty = config.storeProperty || "flash";
+
+  if (!req.session[storeProperty]) req.session[storeProperty] = {};
+
   let flashDatas = req.session[storeProperty][key];
   const isValuArray = Array.isArray(value);
   const isSessionDataArray = Array.isArray(flashDatas);

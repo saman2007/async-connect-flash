@@ -13,6 +13,8 @@ import { FlashData } from "./types/types";
 const getFlashMessagePr = (req: Request, key: string, config: Config) => {
   const storeProperty = config.storeProperty || "flash";
 
+  if (!req.session[storeProperty]) req.session[storeProperty] = {};
+
   return new Promise((resolve, reject) => {
     if (req.session[storeProperty][key]) {
       const msg: FlashData = req.session[storeProperty][key];
@@ -43,6 +45,9 @@ const setFlashMessagePr = (
   config: Config
 ) => {
   const storeProperty = config.storeProperty || "flash";
+
+  if (!req.session[storeProperty]) req.session[storeProperty] = {};
+
   let flashDatas = req.session[storeProperty][key];
   const isValuArray = Array.isArray(value);
   const isSessionDataArray = Array.isArray(flashDatas);
